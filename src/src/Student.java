@@ -1,6 +1,7 @@
 /**
- * A Basketball Player and the player's stats.
- * @author dejohns2
+ * A Student and the student's stats.
+ * @author Keaton2319
+ * @author RivJams
  * @since 2025.02.22
  * @version 1.0 beta
  * @see <a href="https://github.com/dejohns2/JavaSection3_BB_Scoreboard_Spring2025.git">GitHub Repository</a>
