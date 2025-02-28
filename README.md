@@ -20,7 +20,9 @@
 - [Authors](#authors)
 
 ## Features
-
+- Add all the data of the course's number of On Time, Late, Excused, and Unexcused attendances.
+- Create up to two individual courses with their own students and seat numbers.
+- Display the total attendances.
 
 ## Code Structure
 
