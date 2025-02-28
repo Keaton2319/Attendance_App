@@ -103,13 +103,13 @@ public class Course {
 	}
 	
 	/**
-	 * Displays each Player's detail stats for the entire Team using the Player's getter methods.<br>
+	 * Displays each student's attendance for the entire Course using the Student's getter methods.<br>
 	 * This method uses the printf method for proper stats alignment. Example:<br>
 	 * <pre>
-	 * Jersey Name            Fouls 1pt 2pt 3pt Total
-	 * ====== =============== ===== === === === =====
-	 *    10  Billy               1   2   3   1    10
-	 *    24  Tammy               0   0   2   0     4
+	 * Seat Name            OnTime Late Excused Unexcused
+	 * ==== =============== ====== ==== ======= =========
+	 *    1  Billy               1    2       1         0
+	 *    5  Tammy               3    0       0         1
 	 * </pre>
 	 */
 	public void displayDetailReport() {
@@ -118,21 +118,18 @@ public class Course {
 
 		displaySummaryReport();
 
-		System.out.println("Jersey Name            Fouls 1pt 2pt 3pt Total");
-		System.out.println("====== =============== ===== === === === =====");
+		System.out.println("Seat Name            OnTime Late Excused Unexcused");
+		System.out.println("==== =============== ====== ==== ======= =========");
 
         for (Student value : allStudents) {
 
             student = value;
 
             System.out.printf("%6d %-15s %5d %3d %3d %3d %5d\n",
-                    student.getJersey(),
+                    student.getOnTime(),
                     student.getName(),
-                    student.getFouls(),
-                    student.getFieldGoals_1pt(),
-                    student.getFieldGoals_2pt(),
-                    student.getFieldGoals_3pt(),
-                    student.getPoints());
+                    student.getExcused(),
+                    student.getUnexcused(),
         }
     	
     	System.out.println();
