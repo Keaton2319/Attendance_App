@@ -89,7 +89,21 @@ public class Course {
 	 * <pre>Course 1 OnTime=4 Late=3 Excused=2 Unexcused=1 </pre>
 	 */
 	public void displaySummaryReport() {
-		System.out.println("Course " + name + " OnTime=" + getOnTime() + " Late=" + getLate() + " Excused=" + getExcused() + " Unexcused" + getUnexcused());
+		int totalOnTime = 0;
+		int totalLate = 0;
+		int totalExcused = 0;
+		int totalUnexcused = 0;
+
+		for (Student value : allStudents) {
+			Student student = value;
+
+			totalOnTime += student.getOnTime();
+			totalLate += student.getLate();
+			totalExcused += student.getExcused();
+			totalUnexcused += student.getUnexcused();
+		}
+
+		System.out.println("Course " + name + " OnTime=" + totalOnTime + " Late=" + totalLate + " Excused=" + totalExcused + " Unexcused" + totalUnexcused);
 	}
 	
 	/**
@@ -115,13 +129,14 @@ public class Course {
 
             student = value;
 
+
             System.out.printf("%6d %-15s %5d %3d %3d %3d %5d\n",
                     student.getSeat(),
                     student.getName(),
                     student.getOnTime(),
                     student.getLate(),
                     student.getExcused(),
-                    student.getUnexcused();
+                    student.getUnexcused());
         }
     	
     	System.out.println();
