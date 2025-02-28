@@ -14,5 +14,8 @@ public class Main {
 
         Course myCourse = new Course();
         myCourse.displaySummaryReport();
+        try {
+            updateAttendance
+        }
     }
 }

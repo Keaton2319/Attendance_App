@@ -135,27 +135,28 @@ public class Student {
 
     /**
      * Increment the appropriate field goal type, using a switch that also handles for invalid data.<br>
-     * case 0 is received then increment onTime by 1<br>
-     * case 1 is received then increment late by 1<br>
-     * case 2 is received then increment excused by 1<br>
-     * case 3 is received then increment unexcused by 1<br>
+     * case 1 is received then increment onTime by 1<br>
+     * case 2 is received then increment late by 1<br>
+     * case 3 is received then increment excused by 1<br>
+     * case 4 is received then increment unexcused by 1<br>
      * default throw an exception displaying the invalid value that was received
-     * @param status The status type 0=On Time, 1=Late, 2=Excused, 3=Unexcused
-     * @throws Exception if an invalid status is received (valid 0-3)<br>
-     * Error Example: Invalid status = 4
+     * @param status The status type 1=On Time, 2=Late, 3=Excused, 4=Unexcused
+     * @throws Exception if an invalid status is received (valid 1-4)<br>
+     * Error Example: Invalid status = 0
      */
     public void updateAttendance(int status) throws Exception {
 
         switch (status) {
-            case 0:
-                onTime++;
             case 1:
-                late++;
+                onTime++;
                 break;
             case 2:
-                excused++;
+                late++;
                 break;
             case 3:
+                excused++;
+                break;
+            case 4:
                 unexcused++;
                 break;
             default:
