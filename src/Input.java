@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * Handles all user's input with validation
+ * Handles all user's input plus validation
  *
  * @author RivJams
  * @author Keaton2319
