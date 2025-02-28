@@ -26,16 +26,6 @@ public class Course {
 	}
 
 	/**
-	 * Calls the default constructor, and then set's the course's name using the setter for data validation.
-	 * @param name the course's name
-	 * @throw Exception if the setName fails due to a blank name
-	 */
-	public Course(String name) throws Exception {
-		this();
-		setName(name);
-	}
-
-	/**
 	 * Gets the course's name.
 	 * @return The course's name.
 	 */
@@ -80,7 +70,7 @@ public class Course {
 	 * Add a student to the Course, by using the overload constructor that allows setting their name and seat number too.<br>
 	 * This method will verify that the seat number is not already used by another student by calling the Course.getStudent method.<br>
 	 * and if it is, then it will throw an exception back to the calling method
-	 * @param name The Player's name.
+	 * @param name The Student's name.
 	 * @param seat The Student's seat number.
 	 * @throws Exception Seat number # already assigned.
 	 */
@@ -94,42 +84,44 @@ public class Course {
 	}
 
 	/**
-	 * Display the Team's summary stats using the Team.getTeamFouls and getTeamPoints methods.<br>
+	 * Display the Student's summary stats using the Course.getOnTime, getLate, getExcused, and getUnexcused methods.<br>
 	 * Example: <br>
-	 * <pre>Team Wildcats Fouls=4 Points=23</pre>
+	 * <pre>Course 1 OnTime=4 Late=3 Excused=2 Unexcused=1 </pre>
 	 */
 	public void displaySummaryReport() {
-		System.out.println("Course " + name + " OnTime=" + getOnTime() + " Late=" + getTeamPoints() + "Excused=" + getExcused() + "Unexcused" + getUnexcused());
+		System.out.println("Course " + name + " OnTime=" + getOnTime() + " Late=" + getLate() + " Excused=" + getExcused() + " Unexcused" + getUnexcused());
 	}
 	
 	/**
-	 * Displays each student's attendance for the entire Course using the Student's getter methods.<br>
-	 * This method uses the printf method for proper stats alignment. Example:<br>
+	 * Displays each Student's detail stats for the entire Course using the Student's getter methods.<br>
+	 * This method uses the printf method for proper status alignment. Example:<br>
 	 * <pre>
-	 * Seat Name            OnTime Late Excused Unexcused
-	 * ==== =============== ====== ==== ======= =========
-	 *    1  Billy               1    2       1         0
-	 *    5  Tammy               3    0       0         1
+	 * Seat Name            On Time Late Excused Unexcused
+	 * ==== =============== ======= ==== ======= =========
+	 *    1 Debbie                3    0       1         0
+	 *    2 Fred                  2    2       0         0
 	 * </pre>
 	 */
 	public void displayDetailReport() {
 
-		Player player;
+		Student student;
 
 		displaySummaryReport();
 
-		System.out.println("Seat Name            OnTime Late Excused Unexcused");
-		System.out.println("==== =============== ====== ==== ======= =========");
+		System.out.println("Seat Name            On Time Late Excused Unexcused");
+		System.out.println("==== =============== ======= ==== ======= =========");
 
         for (Student value : allStudents) {
 
             student = value;
 
             System.out.printf("%6d %-15s %5d %3d %3d %3d %5d\n",
-                    student.getOnTime(),
+                    student.getSeat(),
                     student.getName(),
+                    student.getOnTime(),
+                    student.getLate(),
                     student.getExcused(),
-                    student.getUnexcused(),
+                    student.getUnexcused();
         }
     	
     	System.out.println();

@@ -81,7 +81,7 @@ public class Student {
      * Get the Student's number of onTime.
      * @return the number of onTime by the Student.
      */
-    public int getOnTime() {	return onTime; }
+    public int getOnTime() {return onTime; }
 
     /**
      * Get the Student's number of late attendances.
