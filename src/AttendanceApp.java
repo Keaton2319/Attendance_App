@@ -8,10 +8,10 @@
  */
 public class AttendanceApp {
 	
-    /** The home team playing. */
+    /** The first section. */
     private final Course section1;
     
-    /** The away team playing. */
+    /** The second section. */
     private final Course section2;
 
 	/** Standard double dash line for display output */
@@ -29,28 +29,28 @@ public class AttendanceApp {
     } // end of default constructor
     
     /**
-     *  Displays the BB Stats App header. Example:<br>
+     *  Displays the Attendance App header. Example:<br>
 	 *  <pre>
 	 *  =========================================
-	 *  Welcome to the BB Scoreboard App
+	 *  Welcome to the Attendance App
 	 *  =========================================
 	 *  </pre>
      */
     private void displayAppHeading() {
     	
 		System.out.println(DOUBLE_DASH_LINE);
-		System.out.println("Welcome to the BB Scoreboard App");
+		System.out.println("Welcome to the Attendance App");
 		System.out.println(DOUBLE_DASH_LINE);
 		System.out.println();
 		
     } // end of displayAppHeading
     
     /**
-     * Sets the teams names and calls setupPlayers to setup each team's players. Example:<br>
+     * Sets the course's names and setup each course's students. Example:<br>
 	 * <pre>
-	 * Enter the HOME Team name: user input
+	 * Enter Section 1's course name: user input
 	 * -----------------------------------------
-	 * Enter the AWAY Team name: user input
+	 * Enter Section 2's course name: uer input
 	 * </pre>
 	 * @throw Exception if the setters throw an error back due to data validation.
      */
@@ -58,30 +58,30 @@ public class AttendanceApp {
     	
     	String userInput;
   		
-		userInput = Input.getLine("Enter the HOME Team name: ");
+		userInput = Input.getLine("Enter Section 1's course name: ");
 		section1.setName(userInput);
-		setupPlayers(section1);
+		setupStudents(section1);
 
 		System.out.println();
 		System.out.println(SINGLE_DASH_LINE);
 		System.out.println();
 
-		userInput = Input.getLine("Enter the AWAY TEAM name: ");
+		userInput = Input.getLine("Enter Section 2's course name: ");
 		section2.setName(userInput);
-		setupPlayers(section2);
+		setupStudents(section2);
     	
     } // end of setupTeams
     
     /**
-     * Sets up the team's players.<br>
-	 * Calls Input.getLine to get the player's name<br>
-	 * Calls Input.getIntRange to get the player's jersery between 0 and 55<br>
+     * Sets up the course's students.<br>
+	 * Calls Input.getLine to get the student's name<br>
+	 * Calls Input.getIntRange to get the student's seat between 0 and 55<br>
 	 * Example:<br>
 	 * <pre>
-     * Enter Wildcats player's name or 'q' to quit: user input
-	 * Enter Billy's jersey number: user input
+     * Enter 9:00 am student's name or 'q' to quit: user input
+	 * Enter Billy's seat number: user input
 	 * </pre>
-     * @param team The team to setup players for.
+     * @param course The couse to setup students for.
      */
     private void setupStudents(Course course) {
     	String courseName = course.getName();
@@ -90,13 +90,13 @@ public class AttendanceApp {
 
     	while (true) {
 			System.out.println();
-			name = Input.getLine("Enter " + courseName + " player's name or 'q' to quit: ");
+			name = Input.getLine("Enter " + courseName + " student's name or 'q' to quit: ");
 			
 			if (name.equals("q"))
 				return;
 			
 			try { 
-				seat = Input.getIntRange("Enter " + name + "'s jersey number: ", 0, 55);
+				seat = Input.getIntRange("Enter " + name + "'s seat number: ", 0, 55);
 				course.addStudent(name, seat);
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
@@ -108,15 +108,15 @@ public class AttendanceApp {
     } // end of setupPlayers
     
     /**
-     * Keeps the game running via menu options. Example:<br>
+     * Keeps the application running via menu options. Example:<br>
 	 * <pre>
 	 * -----------------------------------------
 	 * Main Menu
 	 * -----------------------------------------
-	 * 0 = End Game
-	 * 1 = Enter Wildcats Team's Stats
-	 * 2 = Enter Blue Devils Team's Stats
-	 * 3 = Display Game Stats
+	 * 0 = End Attendance App
+	 * 1 = Take 9:00 am Attendance
+	 * 2 = Take 10:00 am Attendance
+	 * 3 = Display All Attendance Report
 	 * -----------------------------------------
 	 * Menu Choice:
 	 * </pre>
@@ -129,7 +129,7 @@ public class AttendanceApp {
     	
     	System.out.println();
     	System.out.println(DOUBLE_DASH_LINE);    	
-    	System.out.println("Game Started!");
+    	System.out.println("Recording Attendance!");
     	System.out.println(DOUBLE_DASH_LINE);
     	System.out.println();
     	
@@ -140,10 +140,10 @@ public class AttendanceApp {
     		System.out.println("Main Menu");
     		System.out.println(SINGLE_DASH_LINE);
     		
-    		System.out.println("0 = End Game");
-    		System.out.println("1 = Enter " + section1.getName() + " Team's Stats");
-    		System.out.println("2 = Enter " + section2.getName() + " Team's Stats");
-    		System.out.println("3 = Display Game Stats");
+    		System.out.println("0 = End Attendance App");
+    		System.out.println("1 = Take " + section1.getName() + " Attendance");
+    		System.out.println("2 = Take " + section2.getName() + " Attendance");
+    		System.out.println("3 = Display All Attendance Report");
     		
     		System.out.println(SINGLE_DASH_LINE);
     		userInput = Input.getIntRange("Menu Choice: ", 0, 3);
@@ -184,13 +184,13 @@ public class AttendanceApp {
     } // end of playGame
     
     /**
-     * Update the select team's stats.<br>
+     * Update the selected course's stats.<br>
 	 * Calls Input.getIntRange using range from 1 and 55.<br>
 	 * Example: <br>
 	 * <pre>
 	 * Enter Wildcats's Jersey # user input
 	 * </pre>
-	 * @param team The team to update stats for.
+	 * @param course The team to update stats for.
      * @throws Exception getPlayer could throw an invalid jersey error
      */
     private void courseAttendance(Course course) throws Exception {
@@ -222,76 +222,65 @@ public class AttendanceApp {
      * Displays the player's name along with the stats menu. Example:
 	 * <pre>
  	 * -----------------------------------------
-	 * Enter #10 Billy Stats
+	 * Enter #10 Billy Attendance
 	 * -----------------------------------------
-	 * 0 = foul
-	 * 1 = free throw
-	 * 2 = 2pt field goal
-	 * 3 = 3pt field goal
+	 * 0 = On Time
+	 * 1 = Late
+	 * 2 = Excused
+	 * 3 = Unexcused
 	 * -----------------------------------------
-	 * Enter Stat Type: 2
+	 * Enter Stat Type: 0
 	 * -----------------------------------------
-	 * #10 Billy Fouls=0 Points=2
+	 * #10 Billy OnTime=1 Late=0 Excused=0 Unexcused=0
 	 * -----------------------------------------
      * </pre>
-     * @param player The player to enter stats for
+     * @param student The student to enter attendance for
      */
-    private void updatePlayerStats(Player player) {
+    private void studentAttendance(Student student) {
     	int type;
 
         System.out.println();
 		
 		System.out.println(SINGLE_DASH_LINE);
-		System.out.println("Enter #" + player.getJersey() + " " +player.getName() + " Stats");
+		System.out.println("Enter #" + student.getSeat() + " " +student.getName() + " Attendance");
 		System.out.println(SINGLE_DASH_LINE);
 		
-		System.out.println("0 = foul");
-		System.out.println("1 = free throw");
-		System.out.println("2 = 2pt field goal");
-		System.out.println("3 = 3pt field goal");
+		System.out.println("0 = On Time");
+		System.out.println("1 = Late");
+		System.out.println("2 = Excused");
+		System.out.println("3 = Unexcused");
 		
 		System.out.println(SINGLE_DASH_LINE);
-		type = Input.getIntRange("Enter Stat Type: ", 0, 3);
+		type = Input.getIntRange("Enter Status: ", 0, 3);
 		System.out.println(SINGLE_DASH_LINE);
 		
 		try {
-			player.updateStats(type);
+			student.updateStats(type);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-			System.out.println("Unable to update player's stats!");
+			System.out.println("Unable to update student's stats!");
 		}
 
-		player.displayStats();
+		student.displayStats();
 
     }
     
     /**
-     * Display the updated Scoreboard for both teams. Calls the Team's displayTeamStats
+     * Display the updated attendance for both courses. Calls the Team's displayTeamStats
 	 * for both the home and away teams.
      */
-    private void updateScoreboard() {
+    private void displayDetailReports() {
     	
-    	homeTeam.displayTeamStats();
-    	awayTeam.displayTeamStats();
+    	section1.displayTeamStats();
+    	section2.displayTeamStats();
     	
     }
-    
-    /**
-     * Display all team player's detail stats. call the displayDetailsStats
-	 * for both the home and away teams.
-     */
-    private void displayGameStatus() {
-
-    	homeTeam.displayDetailStats();
-    	awayTeam.displayDetailStats();
-
-    } // end of playGame
     
 	/**
-	 * Main method that creates the BB_Stats_App object and then
-	 * setups up the teams and play the game via menu options.
+	 * Main method that creates the AttendanceApp object and then
+	 * setups up the courses and runs the application via menu options.
 	 * <br>
-	 * 1) creates a new scoreboard<br>
+	 * 1) creates a new attendance tracker<br>
 	 * 2) calls the displayAppHeading method<br>
 	 * 3) using a try-catch calls setupTeams and mainMenu methods<br>
 	 * <br>
