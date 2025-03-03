@@ -7,18 +7,18 @@
  * @see <a href="https://github.com/dejohns2/JavaSection3_AttendanceApp_Spring2025.git">GitHub Repository</a>
  */
 public class AttendanceApp {
-	
-    /** The first section. */
-    private final Course section1;
-    
-    /** The second section. */
-    private final Course section2;
 
 	/** Standard double dash line for display output */
 	private static final String DOUBLE_DASH_LINE = String.format("%50s", "").replace(' ', '=');
 
 	/** Standard single dash line for display output */
 	private static final String SINGLE_DASH_LINE = DOUBLE_DASH_LINE.replace('=', '-');
+
+	/** The first section. */
+	private final Course section1;
+
+	/** The second section. */
+	private final Course section2;
     
     /** Default constructor that instantiate both teams */
     public AttendanceApp() {
@@ -124,7 +124,7 @@ public class AttendanceApp {
      */
     private void mainMenu() throws Exception {
     	
-    	boolean playGame = true;
+    	boolean runAttendance = true;
     	int userInput;
     	
     	System.out.println();
@@ -134,7 +134,7 @@ public class AttendanceApp {
     	System.out.println();
     	
     	
-    	while (playGame) {
+    	while (runAttendance) {
     		
     		System.out.println(SINGLE_DASH_LINE);
     		System.out.println("Main Menu");
@@ -152,27 +152,29 @@ public class AttendanceApp {
     		System.out.println();
     		
     		switch (userInput) {
-    		case 0:
-    			playGame = false;
-    			updateScoreboard();
+    		case 1:
+    			runAttendance = false;
+    			displayDetailReports();
         		System.out.println();
         		break;
         		
-    		case 1:
     		case 2:
+    		case 3:
     			
     			if (userInput == 1)
-    				updateTeamStats(section1);
+    				courseAttendance(section1);
     			else
-    				updateTeamStats(section2);
+    				courseAttendance(section2);
     			
     			System.out.println();
-        		updateScoreboard();
+				/** Look at later in case of change */
+        		displayDetailReports();
         		System.out.println();
         		break;
         		
-    		case 3:
-    			displayGameStatus();
+    		case 4:
+				/** Look at later in case of change */
+    			displayDetailReports();
     			break;
     			
     		default:
@@ -181,17 +183,17 @@ public class AttendanceApp {
     		} // end of switch
     	}
 
-    } // end of playGame
+    } // end of runAttendance
     
     /**
      * Update the selected course's stats.<br>
 	 * Calls Input.getIntRange using range from 1 and 55.<br>
 	 * Example: <br>
 	 * <pre>
-	 * Enter Wildcats's Jersey # user input
+	 * Enter Student's seat # user input
 	 * </pre>
-	 * @param course The team to update stats for.
-     * @throws Exception getPlayer could throw an invalid jersey error
+	 * @param course The course to update stats for.
+     * @throws Exception getStudent could throw an invalid seat error
      */
     private void courseAttendance(Course course) throws Exception {
 
@@ -208,7 +210,7 @@ public class AttendanceApp {
 				continue;
 			}
 			
-			courseAttendance(student);
+			studentAttendance(student);
 			
 			break;
 		}
@@ -219,15 +221,15 @@ public class AttendanceApp {
     } // end of updateTeam
     
     /**
-     * Displays the player's name along with the stats menu. Example:
+     * Displays the student's name along with the stats menu. Example:
 	 * <pre>
  	 * -----------------------------------------
 	 * Enter #10 Billy Attendance
 	 * -----------------------------------------
-	 * 0 = On Time
-	 * 1 = Late
-	 * 2 = Excused
-	 * 3 = Unexcused
+	 * 1 = On Time
+	 * 2 = Late
+	 * 3 = Excused
+	 * 4 = Unexcused
 	 * -----------------------------------------
 	 * Enter Stat Type: 0
 	 * -----------------------------------------
@@ -255,24 +257,24 @@ public class AttendanceApp {
 		System.out.println(SINGLE_DASH_LINE);
 		
 		try {
-			student.updateStats(type);
+			student.updateAttendance(type);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			System.out.println("Unable to update student's stats!");
 		}
 
-		student.displayStats();
+		student.displayAttendance();
 
     }
     
     /**
-     * Display the updated attendance for both courses. Calls the Team's displayTeamStats
+     * Display the updated attendance for both courses. Calls the Course's display
 	 * for both the home and away teams.
      */
     private void displayDetailReports() {
     	
-    	section1.displayTeamStats();
-    	section2.displayTeamStats();
+    	section1.displaySummaryReport();
+    	section2.displaySummaryReport();
     	
     }
     
@@ -288,13 +290,13 @@ public class AttendanceApp {
      */
 	public static void main(String[] args) {
 
-		AttendanceApp scoreboard = new AttendanceApp();
+		AttendanceApp attendanceboard = new AttendanceApp();
 
-		scoreboard.displayAppHeading();
+		attendanceboard.displayAppHeading();
 		
 		try {
-			scoreboard.setupTeams();
-			scoreboard.mainMenu();
+			attendanceboard.setupCourses();
+			attendanceboard.mainMenu();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			System.out.println("Sorry but this program ended with an error. Please contact Princess Debbie!");
