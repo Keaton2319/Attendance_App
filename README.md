@@ -53,7 +53,7 @@
 ### Running the Application
 1. **Clone the Repository**
      - + Enter repository URL here when complete +
-2. **Locate AttendanceApp.java**
+2. **Locate Attendance_App.java**
 3. **Run the current application**
      - Locate the arrow button in the top right and click it to begin the program
 
