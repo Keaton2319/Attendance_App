@@ -67,8 +67,8 @@
 - Keaton Snodgrass
      - Author of Student.java
      - https://github.com/Keaton2319
-- Kylian James
+- River Wallerstedt
      - Author of Courses.java
-     - https://github.com/KylianJ65
+     - https://github.com/RivJams
 
 :arrow_up:[Return To Top](#attendance-app)
