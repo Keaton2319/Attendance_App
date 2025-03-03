@@ -103,7 +103,7 @@ public class Course {
 			totalUnexcused += student.getUnexcused();
 		}
 
-		System.out.println("Course " + name + " OnTime=" + totalOnTime + " Late=" + totalLate + " Excused=" + totalExcused + " Unexcused" + totalUnexcused);
+		System.out.println("Course " + name + " OnTime=" + totalOnTime + " Late=" + totalLate + " Excused=" + totalExcused + " Unexcused=" + totalUnexcused);
 	}
 	
 	/**

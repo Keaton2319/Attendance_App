@@ -1,12 +1,13 @@
 /**
- * Basketball Stats Application
+ * Course Attendance Application
  *
+ * @author kesnod01
  * @author RivJams
  * @version 1.0 beta
  * @since 2025.02.21
  * @see <a href="https://github.com/dejohns2/JavaSection3_AttendanceApp_Spring2025.git">GitHub Repository</a>
  */
-public class AttendanceApp {
+public class Attendance_App {
 
 	/** Standard double dash line for display output */
 	private static final String DOUBLE_DASH_LINE = String.format("%50s", "").replace(' ', '=');
@@ -21,7 +22,7 @@ public class AttendanceApp {
 	private final Course section2;
     
     /** Default constructor that instantiate both teams */
-    public AttendanceApp() {
+    public Attendance_App() {
     	
     	section1 = new Course();
         section2 = new Course();
@@ -70,7 +71,7 @@ public class AttendanceApp {
 		section2.setName(userInput);
 		setupStudents(section2);
     	
-    } // end of setupTeams
+    } // end of setupCourses
     
     /**
      * Sets up the course's students.<br>
@@ -96,7 +97,7 @@ public class AttendanceApp {
 				return;
 			
 			try { 
-				seat = Input.getIntRange("Enter " + name + "'s seat number: ", 0, 55);
+				seat = Input.getIntRange("Enter " + name + "'s seat number: ", 1, 55);
 				course.addStudent(name, seat);
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
@@ -105,7 +106,7 @@ public class AttendanceApp {
 			
     	}
 		    	
-    } // end of setupPlayers
+    } // end of setupStudents
     
     /**
      * Keeps the application running via menu options. Example:<br>
@@ -113,14 +114,14 @@ public class AttendanceApp {
 	 * -----------------------------------------
 	 * Main Menu
 	 * -----------------------------------------
-	 * 0 = End Attendance App
-	 * 1 = Take 9:00 am Attendance
-	 * 2 = Take 10:00 am Attendance
-	 * 3 = Display All Attendance Report
+	 * 1 = End Attendance App
+	 * 2 = Take 9:00 am Attendance
+	 * 3 = Take 10:00 am Attendance
+	 * 4 = Display All Attendance Report
 	 * -----------------------------------------
 	 * Menu Choice:
 	 * </pre>
-     * @throws Exception updateTeamStats could throw an error if an invalid option is selected
+     * @throws Exception displayDetailReports could throw an error if an invalid option is selected
      */
     private void mainMenu() throws Exception {
     	
@@ -140,13 +141,13 @@ public class AttendanceApp {
     		System.out.println("Main Menu");
     		System.out.println(SINGLE_DASH_LINE);
     		
-    		System.out.println("0 = End Attendance App");
-    		System.out.println("1 = Take " + section1.getName() + " Attendance");
-    		System.out.println("2 = Take " + section2.getName() + " Attendance");
-    		System.out.println("3 = Display All Attendance Report");
+    		System.out.println("1 = End Attendance App");
+    		System.out.println("2 = Take " + section1.getName() + " Attendance");
+    		System.out.println("3 = Take " + section2.getName() + " Attendance");
+    		System.out.println("4 = Display All Attendance Report");
     		
     		System.out.println(SINGLE_DASH_LINE);
-    		userInput = Input.getIntRange("Menu Choice: ", 0, 3);
+    		userInput = Input.getIntRange("Menu Choice: ", 1, 4);
     		System.out.println(SINGLE_DASH_LINE);
     		
     		System.out.println();
@@ -161,19 +162,17 @@ public class AttendanceApp {
     		case 2:
     		case 3:
     			
-    			if (userInput == 1)
+    			if (userInput == 2)
     				courseAttendance(section1);
     			else
     				courseAttendance(section2);
     			
     			System.out.println();
-				/** Look at later in case of change */
         		displayDetailReports();
         		System.out.println();
         		break;
         		
     		case 4:
-				/** Look at later in case of change */
     			displayDetailReports();
     			break;
     			
@@ -218,7 +217,7 @@ public class AttendanceApp {
 		System.out.println();
 		System.out.println(SINGLE_DASH_LINE);
 			
-    } // end of updateTeam
+    } // end of courseAttendance
     
     /**
      * Displays the student's name along with the stats menu. Example:
@@ -247,13 +246,13 @@ public class AttendanceApp {
 		System.out.println("Enter #" + student.getSeat() + " " +student.getName() + " Attendance");
 		System.out.println(SINGLE_DASH_LINE);
 		
-		System.out.println("0 = On Time");
-		System.out.println("1 = Late");
-		System.out.println("2 = Excused");
-		System.out.println("3 = Unexcused");
+		System.out.println("1 = On Time");
+		System.out.println("2 = Late");
+		System.out.println("3 = Excused");
+		System.out.println("4 = Unexcused");
 		
 		System.out.println(SINGLE_DASH_LINE);
-		type = Input.getIntRange("Enter Status: ", 0, 3);
+		type = Input.getIntRange("Enter Status: ", 1, 4);
 		System.out.println(SINGLE_DASH_LINE);
 		
 		try {
@@ -269,7 +268,7 @@ public class AttendanceApp {
     
     /**
      * Display the updated attendance for both courses. Calls the Course's display
-	 * for both the home and away teams.
+	 * for both the section 1 and section 2 courses.
      */
     private void displayDetailReports() {
     	
@@ -284,13 +283,13 @@ public class AttendanceApp {
 	 * <br>
 	 * 1) creates a new attendance tracker<br>
 	 * 2) calls the displayAppHeading method<br>
-	 * 3) using a try-catch calls setupTeams and mainMenu methods<br>
+	 * 3) using a try-catch calls setupCourses and mainMenu methods<br>
 	 * <br>
 	 * @param args No command line input args are used for this application
      */
 	public static void main(String[] args) {
 
-		AttendanceApp attendanceboard = new AttendanceApp();
+		Attendance_App attendanceboard = new Attendance_App();
 
 		attendanceboard.displayAppHeading();
 		
@@ -306,4 +305,4 @@ public class AttendanceApp {
 		
 	} // end of main
 	
-} // end of BB_Stats_App class
+} // end of Attendance_App class
