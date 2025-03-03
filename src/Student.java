@@ -1,5 +1,6 @@
 /**
  * A Student and the student's stats.
+ *
  * @author Keaton2319
  * @author RivJams
  * @since 2025.02.22
