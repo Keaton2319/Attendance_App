@@ -130,7 +130,7 @@ public class Course {
             student = value;
 
 
-            System.out.printf("%6d %-15s %5d %3d %3d %3d %5d\n",
+            System.out.printf("%4d %-15s %7d %4d %7d %9d\n",
                     student.getSeat(),
                     student.getName(),
                     student.getOnTime(),

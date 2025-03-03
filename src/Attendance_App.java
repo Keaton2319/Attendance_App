@@ -5,7 +5,7 @@
  * @author RivJams
  * @version 1.0 beta
  * @since 2025.02.21
- * @see <a href="https://github.com/dejohns2/JavaSection3_AttendanceApp_Spring2025.git">GitHub Repository</a>
+ * @see <a href="https://github.com/Keaton2319/Attendance_App">GitHub Repository</a>
  */
 public class Attendance_App {
 
@@ -168,7 +168,7 @@ public class Attendance_App {
     				courseAttendance(section2);
     			
     			System.out.println();
-        		displayDetailReports();
+        		displaySummaryReports();
         		System.out.println();
         		break;
         		
@@ -272,10 +272,18 @@ public class Attendance_App {
      */
     private void displayDetailReports() {
     	
-    	section1.displaySummaryReport();
-    	section2.displaySummaryReport();
+    	section1.displayDetailReport();
+    	section2.displayDetailReport();
     	
     }
+
+	/**
+	 * Display the summary attendance for both courses. Calls the Courses displaySummaryReport
+	 */
+	private void displaySummaryReports() {
+		section1.displaySummaryReport();
+		section2.displaySummaryReport();
+	}
     
 	/**
 	 * Main method that creates the AttendanceApp object and then
