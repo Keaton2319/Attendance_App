@@ -1,0 +1,265 @@
+EXAMPLE OF ATTENDANCE APP CONSOLE OUTPUT
+
+==================================================
+Welcome to the Attendance App
+==================================================
+
+Enter Section 1's course name: Algebra
+
+Enter Algebra student's name or 'q' to quit: Kyler
+Enter Kyler's seat number: 1
+
+Enter Algebra student's name or 'q' to quit: Steven
+Enter Steven's seat number: 2
+
+Enter Algebra student's name or 'q' to quit: Mikey
+Enter Mikey's seat number: 3
+
+Enter Algebra student's name or 'q' to quit: q
+
+--------------------------------------------------
+
+Enter Section 2's course name: Calculus
+
+Enter Calculus student's name or 'q' to quit: Sarah
+Enter Sarah's seat number: 1
+
+Enter Calculus student's name or 'q' to quit: Kevin
+Enter Kevin's seat number: 2
+
+Enter Calculus student's name or 'q' to quit: Paige
+Enter Paige's seat number: 3
+
+Enter Calculus student's name or 'q' to quit: q
+
+==================================================
+Recording Attendance!
+==================================================
+
+--------------------------------------------------
+Main Menu
+--------------------------------------------------
+1 = End Attendance App
+2 = Take Algebra Attendance
+3 = Take Calculus Attendance
+4 = Display All Attendance Report
+--------------------------------------------------
+Menu Choice: 2
+--------------------------------------------------
+
+Enter Algebra's seat # 1
+
+--------------------------------------------------
+Enter #1 Kyler Attendance
+--------------------------------------------------
+1 = On Time
+2 = Late
+3 = Excused
+4 = Unexcused
+--------------------------------------------------
+Enter Status: 1
+--------------------------------------------------
+#1 Kyler On Time=1 Late=0 Excused=0 Unexcused=0
+--------------------------------------------------
+
+Course Algebra OnTime=1 Late=0 Excused=0 Unexcused=0
+Course Calculus OnTime=0 Late=0 Excused=0 Unexcused=0
+
+--------------------------------------------------
+Main Menu
+--------------------------------------------------
+1 = End Attendance App
+2 = Take Algebra Attendance
+3 = Take Calculus Attendance
+4 = Display All Attendance Report
+--------------------------------------------------
+Menu Choice: 2
+--------------------------------------------------
+
+Enter Algebra's seat # 2
+
+--------------------------------------------------
+Enter #2 Steven Attendance
+--------------------------------------------------
+1 = On Time
+2 = Late
+3 = Excused
+4 = Unexcused
+--------------------------------------------------
+Enter Status: 3
+--------------------------------------------------
+#2 Steven On Time=0 Late=0 Excused=1 Unexcused=0
+--------------------------------------------------
+
+Course Algebra OnTime=1 Late=0 Excused=1 Unexcused=0
+Course Calculus OnTime=0 Late=0 Excused=0 Unexcused=0
+
+--------------------------------------------------
+Main Menu
+--------------------------------------------------
+1 = End Attendance App
+2 = Take Algebra Attendance
+3 = Take Calculus Attendance
+4 = Display All Attendance Report
+--------------------------------------------------
+Menu Choice: 2
+--------------------------------------------------
+
+Enter Algebra's seat # 3
+
+--------------------------------------------------
+Enter #3 Mikey Attendance
+--------------------------------------------------
+1 = On Time
+2 = Late
+3 = Excused
+4 = Unexcused
+--------------------------------------------------
+Enter Status: 4
+--------------------------------------------------
+#3 Mikey On Time=0 Late=0 Excused=0 Unexcused=1
+--------------------------------------------------
+
+Course Algebra OnTime=1 Late=0 Excused=1 Unexcused=1
+Course Calculus OnTime=0 Late=0 Excused=0 Unexcused=0
+
+--------------------------------------------------
+Main Menu
+--------------------------------------------------
+1 = End Attendance App
+2 = Take Algebra Attendance
+3 = Take Calculus Attendance
+4 = Display All Attendance Report
+--------------------------------------------------
+Menu Choice: 3
+--------------------------------------------------
+
+Enter Calculus's seat # 1
+
+--------------------------------------------------
+Enter #1 Sarah Attendance
+--------------------------------------------------
+1 = On Time
+2 = Late
+3 = Excused
+4 = Unexcused
+--------------------------------------------------
+Enter Status: 1
+--------------------------------------------------
+#1 Sarah On Time=1 Late=0 Excused=0 Unexcused=0
+--------------------------------------------------
+
+Course Algebra OnTime=1 Late=0 Excused=1 Unexcused=1
+Course Calculus OnTime=1 Late=0 Excused=0 Unexcused=0
+
+--------------------------------------------------
+Main Menu
+--------------------------------------------------
+1 = End Attendance App
+2 = Take Algebra Attendance
+3 = Take Calculus Attendance
+4 = Display All Attendance Report
+--------------------------------------------------
+Menu Choice: 3
+--------------------------------------------------
+
+Enter Calculus's seat # 2
+
+--------------------------------------------------
+Enter #2 Kevin Attendance
+--------------------------------------------------
+1 = On Time
+2 = Late
+3 = Excused
+4 = Unexcused
+--------------------------------------------------
+Enter Status: 2
+--------------------------------------------------
+#2 Kevin On Time=0 Late=1 Excused=0 Unexcused=0
+--------------------------------------------------
+
+Course Algebra OnTime=1 Late=0 Excused=1 Unexcused=1
+Course Calculus OnTime=1 Late=1 Excused=0 Unexcused=0
+
+--------------------------------------------------
+Main Menu
+--------------------------------------------------
+1 = End Attendance App
+2 = Take Algebra Attendance
+3 = Take Calculus Attendance
+4 = Display All Attendance Report
+--------------------------------------------------
+Menu Choice: 3
+--------------------------------------------------
+
+Enter Calculus's seat # 3
+
+--------------------------------------------------
+Enter #3 Paige Attendance
+--------------------------------------------------
+1 = On Time
+2 = Late
+3 = Excused
+4 = Unexcused
+--------------------------------------------------
+Enter Status: 1
+--------------------------------------------------
+#3 Paige On Time=1 Late=0 Excused=0 Unexcused=0
+--------------------------------------------------
+
+Course Algebra OnTime=1 Late=0 Excused=1 Unexcused=1
+Course Calculus OnTime=2 Late=1 Excused=0 Unexcused=0
+
+--------------------------------------------------
+Main Menu
+--------------------------------------------------
+1 = End Attendance App
+2 = Take Algebra Attendance
+3 = Take Calculus Attendance
+4 = Display All Attendance Report
+--------------------------------------------------
+Menu Choice: 4
+--------------------------------------------------
+
+Course Algebra OnTime=1 Late=0 Excused=1 Unexcused=1
+Seat Name            On Time Late Excused Unexcused
+==== =============== ======= ==== ======= =========
+   1 Kyler                 1    0       0         0
+   2 Steven                0    0       1         0
+   3 Mikey                 0    0       0         1
+
+Course Calculus OnTime=2 Late=1 Excused=0 Unexcused=0
+Seat Name            On Time Late Excused Unexcused
+==== =============== ======= ==== ======= =========
+   1 Sarah                 1    0       0         0
+   2 Kevin                 0    1       0         0
+   3 Paige                 1    0       0         0
+
+--------------------------------------------------
+Main Menu
+--------------------------------------------------
+1 = End Attendance App
+2 = Take Algebra Attendance
+3 = Take Calculus Attendance
+4 = Display All Attendance Report
+--------------------------------------------------
+Menu Choice: 1
+--------------------------------------------------
+
+Course Algebra OnTime=1 Late=0 Excused=1 Unexcused=1
+Seat Name            On Time Late Excused Unexcused
+==== =============== ======= ==== ======= =========
+   1 Kyler                 1    0       0         0
+   2 Steven                0    0       1         0
+   3 Mikey                 0    0       0         1
+
+Course Calculus OnTime=2 Late=1 Excused=0 Unexcused=0
+Seat Name            On Time Late Excused Unexcused
+==== =============== ======= ==== ======= =========
+   1 Sarah                 1    0       0         0
+   2 Kevin                 0    1       0         0
+   3 Paige                 1    0       0         0
+
+
+
+Process finished with exit code 0
