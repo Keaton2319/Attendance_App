@@ -38,7 +38,7 @@ Includes seating for up to 55 students in each section.
 
 ## Example Output
 
-[Video Link](./src/BankAppOutput.gif) 🎥
+[Example Output Link](.ConsoleOutputExample.txt)
 
 ## Getting Started
 
