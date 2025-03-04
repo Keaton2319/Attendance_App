@@ -38,7 +38,7 @@ Includes seating for up to 55 students in each section.
 
 ## Example Output
 
-[Example Output Link](.ConsoleOutputExample.txt)
+[Example Output Link](ConsoleOutputExample.txt)
 
 ## Getting Started
 
