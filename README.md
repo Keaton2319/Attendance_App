@@ -59,6 +59,18 @@
 
 ### User Instructions
 
++ Attendance_App Java:
+  <div align="center">
+  <kbd>
+    <img src="file:///Users/snod/Downloads/AttendanceApp.jpeg" />
+  </kbd>
+</div>
+
++ Input Java: 
+
++ Course Java: 
+
++ Student Java: 
 
 ## Authors
 - Debbie Johnson
